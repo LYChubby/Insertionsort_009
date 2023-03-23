@@ -21,8 +21,32 @@ void input() {
 	cout << "Masukkan Element Array" << endl;
 	cout << "======================" << endl;
 
-	for (int i = 0; i < n; i++) {      // Menggunakan Perulangan For Untuk Menyimpan Data Pada Array
+	for (int i = 0; i < n; i++) {                    // Menggunakan Perulangan For Untuk Menyimpan Data Pada Array
 		cout << "Data Ke- " << (i + 1) << ": ";      // Memasukkan / Menginputkan Nilai Data n
 		cin >> arr[i];
+	}
+}
+
+void insertsort() {
+	int temp;
+	int j;
+
+	for (int i = 0; i < n; i++) {              // Looping Dengan i Dimulai Dari 1 Hingga n-1
+		temp = arr[i];
+
+		j = i - 1;								// Setting j Sama Dengan i - 1
+
+		while (j >= 0 && arr[j] > temp) {       // Looping While Dimana Nilai j Lebih Besar Sama Dengan 0 dan 
+												// Arr[j] Lebih Besar Daripada Temp
+			arr[j + 1] = arr[j];
+			j--;
+		}
+
+		arr[j + 1] = temp;
+
+		cout << "\nStep " << i << ": ";      
+		for (int k = 0; k < n; k++) {           // Looping Nilai K Dimulai Dari 0 Hingga n-1
+			cout << arr[k] << " ";
+		}
 	}
 }
